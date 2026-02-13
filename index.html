@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Radio Party TV - En Vivo 24/7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<meta name="description" content="Radio Party TV en vivo 24/7. Música, fiesta y entretenimiento sin parar.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="🎉 Radio Party TV - EN VIVO 24/7">
+<meta property="og:description" content="Disfruta Radio Party TV en vivo las 24 horas. ¡La fiesta nunca se detiene!">
+<meta property="og:image" content="https://i.postimg.cc/h47G9nGx/Chat-GPT-Image-13-feb-2026-01-43-54.png">
+<meta property="og:url" content="https://tudominio.com/">
+<meta property="og:site_name" content="Radio Party TV">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🎉 Radio Party TV - EN VIVO 24/7">
+<meta name="twitter:description" content="Música y fiesta en vivo todo el día.">
+<meta name="twitter:image" content="https://i.postimg.cc/h47G9nGx/Chat-GPT-Image-13-feb-2026-01-43-54.png">
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg);
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: black;
+  }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+  <video id="video" controls playsinline autoplay></video>
+</div>
+
+<script>
+  const video = document.getElementById('video');
+  const videoSrc = "https://tuvideoonline.com.ar:3970/live/kevintvlive.m3u8";
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+  }
+</script>
+
+</body>
+</html>
